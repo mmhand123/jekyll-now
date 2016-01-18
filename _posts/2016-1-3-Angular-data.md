@@ -63,7 +63,7 @@ Great! Now we're successfully passing data along between controllers via the fac
 
 One way to do that is by broadcasting an event in the factory and watching for it in the controller.
 
-The only thing is that we need a parent scope to broadcast on that the scope of the controller can look back to for the broadcast. For that, we can add the broadcast on the rootscope, which is at the base of all scopes.
+The only thing is that we need a parent scope to broadcast on that the scope of the controller can look back to for the broadcast, because broadcast sends events down the scope chain. For that, we can add the broadcast on the rootscope, which is at the base of all scopes.
 
 ```javascript
 (function() {
@@ -106,3 +106,4 @@ And in the main controller:
 })();
 
 ```
+Now we can store data in the factory and update that data on our controller when it changes.
